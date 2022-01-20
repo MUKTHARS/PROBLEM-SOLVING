@@ -1,51 +1,20 @@
-
-#include<stdio.h>
-void swap(int *a, int *b);
-
-void segregateEvenOdd(int arr[], int size)
-{
-    
-    int left = 0, right = size-1;
-    while (left < right)
+ int findminmove(int a[],int n)
     {
-        /* Increment left index while we see 0 at left */
-        while (arr[left]%2 == 0 && left < right)
-            left++;
-
-        /* Decrement right index while we see 1 at right */
-        while (arr[right]%2 == 1 && left < right)
-            right--;
-
-        if (left < right)
+        int ecount =0 , ocount =0;
+        for(int i=0;i<n;i++)
         {
-            /* Swap arr[left] and arr[right]*/
-            swap(&arr[left], &arr[right]);
-            left++;
-            right--;
+            if(a[i]%2==0)
+            {
+                ++ecount;
+            }
+        }
+          for(int i =0;i<ecount;i++)
+    {
+        if(a[i]%2 ==1)
+        {
+        ++ocount;
         }
     }
-}
-
-/* UTILITY FUNCTIONS */
-void swap(int *a, int *b)
-{
-    int temp = *a;
-    *a = *b;
-    *b = temp;
-}
-
-/* driver program to test */
-int main()
-{
-    int arr[] = {12, 34, 45, 9, 8, 90, 3};
-    int arr_size = sizeof(arr)/sizeof(arr[0]);
-    int i = 0;
-
-    segregateEvenOdd(arr, arr_size);
-
-    printf("Array after segregation ");
-    for (i = 0; i < arr_size; i++)
-        printf("%d ", arr[i]);
-
-    return 0;
-}
+    return ecount;
+    }
+  
