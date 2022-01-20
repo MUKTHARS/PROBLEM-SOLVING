@@ -1,0 +1,20 @@
+#include<stdio.h>
+void doublearray(int p[],int n)
+{
+    for(int i=0; i<n; i++)
+    {
+        p[i]*=2;
+        printf("%d ",p[i]);
+    }
+}
+  
+int main()
+
+{
+    int p[] = {4,14,24,34};
+    int n = sizeof(p)/sizeof(p[0]);
+    doublearray(p,n);
+   
+}    
+
+OUTPUT : 8 28 48 68
