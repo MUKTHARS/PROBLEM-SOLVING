@@ -20,26 +20,17 @@ void segregate0and1(int arr[], int n)
 	for (int i = count; i < n; i++)
 		arr[i] = 1;
 }
-
-// Function to print segregated array
-void print(int arr[], int n)
-{
-	cout << "Array after segregation is ";
-
-	for (int i = 0; i < n; i++)
-		cout << arr[i] << " ";
-}
-
-// Driver function
 int main()
 {
 	int arr[] = { 0, 1, 0, 1, 1, 1 };
 	int n = sizeof(arr) / sizeof(arr[0]);
 	
 	segregate0and1(arr, n);
-	print(arr, n);
+		
+	for (int i = 0; i < n; i++)
+		cout << arr[i] << " ";
 	
 	return 0;
 }
 
-// This code is contributed by Sahil_Bansall
+
