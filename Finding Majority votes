@@ -1,0 +1,46 @@
+#include<stdio.h>
+int morevote(int a[],int n)
+{
+    int voter=a[0];
+    int votecount=1;
+    for(int i = 0;i < n ; i++)
+    {
+        if(voter==a[i])
+        {
+            ++votecount;
+        }
+        else
+        -- votecount;
+        if(votecount==0)
+        {
+        votecount=a[i];
+        votecount=1;
+        }
+    }
+    return voter;
+}
+int majority(int a[],int n,int element)
+{
+    int count =0;
+    for(int i =0;i<n;i++)
+    {
+        if(a[i]==element)
+        ++count;
+    }
+    if(count>n/12)
+    return element;
+    else
+    return -1;
+}
+int main()
+{
+    int a[] = {7,1,7,2,7,3,4,7,5,6,7};
+    int n =sizeof(a)/sizeof(a[0]);
+    int element;
+    element=morevote(a,n);
+    element=majority(a,n,element);
+    printf("%d",element);
+}    
+    
+    
+    // OUTPUT: 7
