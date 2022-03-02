@@ -10,6 +10,15 @@ int getMissingNo(int a[], int n)
 		total -= a[i];
 	return total;
 }
+Or 
+
+int Findmissing(int a[],int n)
+{
+int res;
+for(int i=0;i<n;i++)
+res^=a[i]^i;
+return res;
+}
 
 // Driver Code
 int main()
